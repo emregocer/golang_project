@@ -1,0 +1,7 @@
+- Interface definitions and testing
+    - Seeder for tests
+- Context deadline
+- Role Based Authorization
+- Better response structure
+- App error enum and better error management in handlers
+- Validation errors

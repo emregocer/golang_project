@@ -1,0 +1,1884 @@
+{
+	"info": {
+		"_postman_id": "1e2bbb15-00e5-4a98-98a5-fbe18c9de472",
+		"name": "golang_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "test_user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pass",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "testemail@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "test_user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "testemail@gmail.com",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:36:51 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\",\n    \"status\": 200\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "test_user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "testemail@gmail.com",
+											"type": "text",
+											"disabled": true
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:37:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Data is not valid\"\n}"
+						},
+						{
+							"name": "User Exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "test_user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "testemail@gmail.com",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:38:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "test_user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pass",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "test_user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:39:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "202"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDE2MDQ3NDAsImlhdCI6MTY0MTU4MDc0MCwiaXNzIjoiZ29sYW5nX2FwaSIsInN1YiI6ImFjY2Vzc190b2tlbiIsImlkIjoyfQ.N7Tj05Cglv-BLd_IHXpDsAERCM02UqkXbOPkU3QwDTQ\"\n}"
+						},
+						{
+							"name": "Wrong credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "test_user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pass1",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:39:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login failed\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "test_user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pass1",
+											"type": "text",
+											"disabled": true
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:39:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Data is not valid\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{access_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:40:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Adventure\",\n            \"description\": \"Example description\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Sci-Fi\",\n            \"description\": \"Example description\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Horror\",\n            \"description\": \"Example description\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Category By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categories/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categories/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:43:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Adventure\",\n        \"description\": \"Example description\"\n    }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categories/123",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories",
+										"123"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:44:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Resource not found\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categories/a",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories",
+										"a"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:45:22 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"A New Category\",\n    \"description\": \"A New Description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"A New Category\",\n    \"description\": \"A New Description\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:46:17 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"A New Category\",\n        \"description\": \"A New Description\"\n    }\n}"
+						},
+						{
+							"name": "Duplicate Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"A New Category\",\n    \"description\": \"A New Description\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:46:27 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Category exists\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"A New Category\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:46:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Data is not valid\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Category\",\n    \"description\": \"Updated Description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categories/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated Category\",\n    \"description\": \"Updated Description\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categories/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:47:51 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Updated Category\",\n        \"description\": \"Updated Description\"\n    }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated Category\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categories/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:48:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Data is not valid\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated Category\",\n    \"description\": \"Updated Description\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categories/123",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories",
+										"123"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:52:41 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Resource not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categories/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categories/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:56:33 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"created_at\": \"2022-01-07T20:55:20.970061+03:00\",\n        \"updated_at\": \"2022-01-07T20:55:20.970061+03:00\",\n        \"is_deleted\": true,\n        \"deleted_at\": {\n            \"Time\": \"2022-01-07T21:56:33.971136+03:00\",\n            \"Valid\": true\n        },\n        \"name\": \"Horror\",\n        \"description\": \"Example description\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Get Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDEzMTI5ODYsImlhdCI6MTY0MTMxMjA4NiwiaXNzIjoiMCIsInN1YiI6ImFjY2Vzc190b2tlbiIsImlkIjowfQ.V6MS8F4fch1AJL7yCwVcQbbnpP8H8Bsk4zfzrRGDT_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categories/1/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categories/1/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories",
+										"1",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:57:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "250"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"An adventure movie\",\n            \"plot\": \"movie plot\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"An adventure movie 2\",\n            \"plot\": \"movie plot\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"An adventure movie 3\",\n            \"plot\": \"movie plot\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"A adventure sci-fi movie 2\",\n            \"plot\": \"movie plot\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categories/a/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categories",
+										"a",
+										"movies"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:58:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Movie By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movies/id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies/id/8",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"id",
+										"8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:58:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "220"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 8,\n        \"name\": \"A adventure sci-fi movie 2\",\n        \"plot\": \"movie plot\",\n        \"categories\": [\n            {\n                \"id\": 2,\n                \"name\": \"Sci-Fi\",\n                \"description\": \"Example description\"\n            },\n            {\n                \"id\": 1,\n                \"name\": \"Updated Category\",\n                \"description\": \"Updated Description\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies/id/123",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"id",
+										"123"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:59:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Resource not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"A New Adventure Movie\",\n    \"plot\": \"A New plot\",\n    \"categories\": [1, 2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"A New Adventure Movie\",\n    \"plot\": \"A New plot\",\n    \"categories\": [1]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 18:59:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 10,\n        \"created_at\": \"2022-01-07T21:59:56.736353+03:00\",\n        \"updated_at\": \"2022-01-07T21:59:56.736353+03:00\",\n        \"is_deleted\": false,\n        \"deleted_at\": {\n            \"Time\": \"0001-01-01T00:00:00Z\",\n            \"Valid\": false\n        },\n        \"name\": \"A New Adventure Movie\",\n        \"plot\": \"A New plot\",\n        \"categories\": null\n    }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"A New Adventure Movie\",\n    \"plot\": \"A New plot\",\n    \"categories\": [1, 1]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 19:00:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Data is not valid\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Movie Name\",\n    \"plot\": \"Updated Movie Plot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies/id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated Movie Name\",\n    \"plot\": \"Updated Movie Plot\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/id/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"id",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 19:03:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "265"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"2022-01-07T20:55:20.970061+03:00\",\n        \"updated_at\": \"2022-01-07T20:55:20.970061+03:00\",\n        \"is_deleted\": false,\n        \"deleted_at\": {\n            \"Time\": \"0001-01-01T00:00:00Z\",\n            \"Valid\": false\n        },\n        \"name\": \"Updated Movie Name\",\n        \"plot\": \"Updated Movie Plot\",\n        \"categories\": null\n    }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated Movie Name\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/id/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"id",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 19:03:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Data is not valid\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movies/id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies/id/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"id",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 19:03:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"2022-01-07T20:55:20.970061+03:00\",\n        \"updated_at\": \"2022-01-07T20:55:20.970061+03:00\",\n        \"is_deleted\": true,\n        \"deleted_at\": {\n            \"Time\": \"2022-01-07T22:03:56.716373+03:00\",\n            \"Valid\": true\n        },\n        \"name\": \"Updated Movie Name\",\n        \"plot\": \"Updated Movie Plot\",\n        \"categories\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Favourite Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movies/favourites",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"favourites"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies/favourites",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"favourites"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 19:08:37 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "243"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"A horror movie\",\n            \"plot\": \"movie plot\",\n            \"categories\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"Horror\"\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"name\": \"A adventure sci-fi movie 2\",\n            \"plot\": \"movie plot\",\n            \"categories\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Sci-Fi\"\n                },\n                {\n                    \"id\": 1,\n                    \"name\": \"Updated Category\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Movie To Favourites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movies/id/1/favourites",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"id",
+								"1",
+								"favourites"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies/id/1/favourites",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"id",
+										"1",
+										"favourites"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 19:07:38 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "13"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true\n}"
+						},
+						{
+							"name": "Duplicate Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies/id/1/favourites",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"id",
+										"1",
+										"favourites"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 19:07:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Movie is already in favourites\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Movie From Favourites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movies/id/1/favourites",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"id",
+								"1",
+								"favourites"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies/id/1/favourites",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"id",
+										"1",
+										"favourites"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jan 2022 19:08:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "13"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
